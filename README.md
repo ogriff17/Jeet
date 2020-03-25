@@ -1,3 +1,3 @@
 # The-Greatest-Group
-Project 1
+Project
 HEY! LOOK AT MY CHANGES!
