@@ -1,0 +1,36 @@
+
+#title-desc {
+    text-align: center;
+    font-family: 'Spicy Rice', cursive;
+}
+body {
+    background-image: url("../images/mainbackground.jpg");
+    background-size: cover;
+}
+.jumbotron {
+    /* opacity: .6; */
+    padding: 10px;
+    background-color: rgba(180,210,99,.4);
+}
+h1 {
+    color: black;
+}
+#jumbo-title {
+    text-align: center;
+    /* font-family: 'Spicy Rice', cursive; */
+    font-family: 'Cookie', cursive;
+    font-weight: 900;
+    font-size: 100px;
+    opacity: 1;
+    color: forestgreen;
+    text-shadow: -1px -1px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+}
+.card {
+    background-color: #b4d263;
+    font-family: 'Spicy Rice', cursive;
+    opacity: .9;
+    padding: 25px;
+    border-color: forestgreen;
+    border-style: solid;
+    border-width: 10px;
+}
