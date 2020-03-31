@@ -1,14 +1,13 @@
-
-.eatInBackground {
-    background-color: linen;
-}
+body {
+    background: url("../images/eatoutbackground.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 #title-desc {
     text-align: center;
     font-family: 'Spicy Rice', cursive;
-}
-body {
-    background-image: url("../images/mainbackground.jpg");
-    background-size: cover;
 }
 .jumbotron {
     /* opacity: .6; */
@@ -35,7 +34,7 @@ h1 {
     background-color: #b4d263;
     font-family: 'Spicy Rice', cursive;
     opacity: .9;
-    padding: 40px;
+    padding: 10px;
     border-color: forestgreen;
     border-style: solid;
     border-width: 5px;
