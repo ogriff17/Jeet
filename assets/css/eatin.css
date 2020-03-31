@@ -42,5 +42,11 @@ h1 {
 }
 
 #mood {
-    color: white;
+    color:yellowgreen; /*This color can always be changed later if we don't like it.*/
+}
+
+.submit-button{ /*Oksana made some changes to the submit button-let me know what you think*/
+    background-color:green;
+    border-style: solid;
+    border-color: yellow;
 }
