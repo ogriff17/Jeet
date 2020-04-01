@@ -45,6 +45,17 @@ function displayRecipes() {
         $("#recipe-col-3").empty();
         var results = response.data;
 
+        //If no information on search is available, alert the user. Need to turn this into a modal
+        if (response.pagination.total_count == 0) {
+            alert('Sorry, there are no Gifs for this topic');
+            var itemindex = foodTopics.indexOf(food);
+            // otherwise display button
+            if (itemindex > -1) {
+              foodTopics.splice(itemindex, 1);
+              displayButtons();
+              }
+          }
+
         for (var j=0; j < results.length; j++) {
             var foodDiv = $("<div");
 
