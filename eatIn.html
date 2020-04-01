@@ -24,10 +24,15 @@
   <!-- As a link -->
     <div class="container">
         <div class = "row">
+            <div class="col-md-12">
             <div class="buttons-view"></div>
+          </div>
         </div>
-        
-        <div class = "row"></div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <div class = "row">
             <!-- Div for the form and submit button-->
             <div class="col-lg-3">
                 <form id="recipe-form">
@@ -37,31 +42,12 @@
                 </form>
             </div>
             <div class="col-lg-9 container-fluid">
-                <div id="hero-view"></div>
                 <div class="row">
-                    <div class="col-sm-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <p class="card-text">Select your recipes here.</p>
-                            </div>
-                          </div>
+                    <div class="col-sm-4" id="recipe-col-1">
                     </div>
-                    <div class="col-sm-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <p class="card-text">Select your recipes here.</p>
-                        </div>
-                      </div>
+                    <div class="col-sm-4" id="recipe-col-2">
                     </div>
-                    <div class="col-sm-4">
-                        <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <p class="card-text">Select your recipes here</p>
-                        </div>
-                      </div>
+                    <div class="col-sm-4" id="recipe-col-3">
                     </div>
                 </div>
                 <!-- Info from API call will be added here -->
@@ -76,12 +62,14 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/javascript/app.js"></script>
     <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js" type="text/JavaScript"></script>
   </body>
 </html>
