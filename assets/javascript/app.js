@@ -30,7 +30,7 @@ $(document).ready(function () {
     function displayRecipes() {
         var food = $(this).attr("data-food");
 
-        var queryURL = "https://api.edamam.com/search?q=" + food + "&app_id=61b506d1&app_key=f0d00dcc2ff7622fe52c06579759bdd0&limit=20";
+        var queryURL = "https://api.edamam.com/search?q=" + food + "&app_id=61b506d1&app_key=f0d00dcc2ff7622fe52c06579759bdd0&limit=10";
 
         console.log(queryURL);
 
@@ -58,15 +58,24 @@ $(document).ready(function () {
                 }
                  
                 for (var j = 0; j < results.length; j++) {
-                   
-                    var foodDiv = $("<div>");
                     
+                    var q = $("<h5>").text(results[j].recipe.label);
+                    // var u = $("<href>").text(results[j].recipe.url);
+
+                    var foodDiv = $("<a href=" + results[j].recipe.url + "</a>");
                     var foodImage = $("<img>");
                     foodImage.attr("src", results[j].recipe.image);
                     foodImage.attr("url", results[j].recipe.image);
                     foodImage.addClass("image");
                     foodDiv.append(foodImage);
                     foodDiv.addClass("card", "card-img-top", "card-body");
+                    foodDiv.append(q);
+                    // foodDiv.append(u);
+                    // u.attr("href");
+                    
+                    foodDiv.click(function() {
+                        console.log($(this));
+                     });
 
                     if (j >= 0 && j < 3) {
                         $("#recipe-col-1").append(foodDiv);
