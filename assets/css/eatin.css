@@ -39,14 +39,41 @@ h1 {
     border-style: solid;
     border-width: 5px;
     text-align: center;
+       margin: 5px;
+}
+.card:link {
+    text-decoration: none;
+}
+.card:hover {
+    text-shadow: -1px -1px 0 yellow, 1px -1px 0 yellow, -1px 1px 0 yellow, 1px 1px 0 yellow;
 }
 
 #mood {
-    color:yellowgreen; /*This color can always be changed later if we don't like it.*/
+    color: yellowgreen; /*This color can always be changed later if we don't like it.*/
 }
 
 .submit-button{ /*Oksana made some changes to the submit button-let me know what you think*/
     background-color:green;
     border-style: solid;
     border-color: yellow;
+font-family: 'Cookie', cursive;
+font-size: 20px;
 }
+.submit-button:hover {
+color: yellow;
+}
+button {
+font-family: 'Cookie', cursive;
+font-size: 20px;
+min-width: 40px;
+margin: 5px;
+background-color:green;
+border-style: solid;
+border-color: yellow;
+}
+h5 {
+color: forestgreen;
+}
+button:hover {
+    color: yellow;
+} 
