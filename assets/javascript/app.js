@@ -30,8 +30,6 @@ $(document).ready(function () {
     function displayRecipes() {
         var food = $(this).attr("data-food");
 
-        var queryURL = "https://api.edamam.com/search?q=" + food + "&app_id=61b506d1&app_key=f0d00dcc2ff7622fe52c06579759bdd0&limit=10";
-
         console.log(queryURL);
 
         $.ajax({
@@ -43,11 +41,11 @@ $(document).ready(function () {
                 $("#recipe-col-1").empty();
                 $("#recipe-col-2").empty();
                 $("#recipe-col-3").empty();
-                var results = response.hits;
+                var foodResults = response.results;
 
 
                 //If no information on search is available, alert the user. Need to turn this into a modal
-                if (results.length === 0) {
+                if (foodResults.length === 0) {
                     alert('Sorry, there are no recipe for this topic');
                     var itemindex = foodTopics.indexOf(food);
                     // otherwise display button
@@ -57,24 +55,17 @@ $(document).ready(function () {
                     }
                 }
                  
-                for (var j = 0; j < results.length; j++) {
-                    
-                    var q = $("<h5>").text(results[j].recipe.label);
-                    // var u = $("<href>").text(results[j].recipe.url);
 
-                    var foodDiv = $("<a href=" + results[j].recipe.url + "</a>");
                     var foodImage = $("<img>");
-                    foodImage.attr("src", results[j].recipe.image);
-                    foodImage.attr("url", results[j].recipe.image);
+                    foodImage.attr("src", foodResults[j].image);
+                    foodImage.attr("url", foodResults[j].image);
                     foodImage.addClass("image");
                     foodDiv.append(foodImage);
                     foodDiv.addClass("card", "card-img-top", "card-body");
                     foodDiv.append(q);
                     // foodDiv.append(u);
                     // u.attr("href");
-                    
-                    foodDiv.click(function() {
-                        console.log($(this));
+
                      });
 
                     if (j >= 0 && j < 3) {
