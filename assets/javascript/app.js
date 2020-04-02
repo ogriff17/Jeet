@@ -63,6 +63,8 @@ $(document).ready(function () {
                     foodDiv.append(foodImage);
                     foodDiv.addClass("card", "card-img-top", "card-body");
                     foodDiv.append(q);
+                    var foodModal = $("<div>");
+                    foodModal.attr(foodResults[j].summary);
                     // foodDiv.append(u);
                     // u.attr("href");
 
