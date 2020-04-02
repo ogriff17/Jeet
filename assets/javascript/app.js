@@ -30,8 +30,6 @@ $(document).ready(function () {
     function displayRecipes() {
         var food = $(this).attr("data-food");
 
-        var queryURL = "https://api.spoonacular.com/recipes/complexSearch?apiKey=af0218eedd114716bee05b4c6cc69e87&addRecipeInformation=true&query=" + food;
-
         console.log(queryURL);
 
         $.ajax({
@@ -57,13 +55,7 @@ $(document).ready(function () {
                     }
                 }
                  
-                for (var j = 0; j < foodResults.length; j++) {
-                   
-                    var foodDiv = $("<div>");
-                    var q = $("<h5>").text(foodResults[j].title);
-                    // var u = $("<href>").text(results[j].recipe.url);
 
-                    // var foodDiv = $("<a href=" + results[j].recipe.url + "</a>");
                     var foodImage = $("<img>");
                     foodImage.attr("src", foodResults[j].image);
                     foodImage.attr("url", foodResults[j].image);
@@ -75,12 +67,7 @@ $(document).ready(function () {
                     foodModal.attr(foodResults[j].summary);
                     // foodDiv.append(u);
                     // u.attr("href");
-                    
 
-                    foodDiv.click(function() {
-                        console.log($(this));
-                        $("#modalWindow").modal("show");
-                        $(".modal-body").html(foodModal);
                      });
 
                     if (j >= 0 && j < 3) {

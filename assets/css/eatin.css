@@ -39,7 +39,6 @@ h1 {
     border-style: solid;
     border-width: 5px;
     text-align: center;
-       margin: 5px;
 }
 .card:link {
     text-decoration: none;
@@ -56,24 +55,3 @@ h1 {
     background-color:green;
     border-style: solid;
     border-color: yellow;
-font-family: 'Cookie', cursive;
-font-size: 20px;
-}
-.submit-button:hover {
-color: yellow;
-}
-button {
-font-family: 'Cookie', cursive;
-font-size: 20px;
-min-width: 40px;
-margin: 5px;
-background-color:green;
-border-style: solid;
-border-color: yellow;
-}
-h5 {
-color: forestgreen;
-}
-button:hover {
-    color: yellow;
-} 
