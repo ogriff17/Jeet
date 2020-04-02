@@ -71,14 +71,16 @@ $(document).ready(function () {
                     foodDiv.append(foodImage);
                     foodDiv.addClass("card", "card-img-top", "card-body");
                     foodDiv.append(q);
+                    var foodModal = $("<div>");
+                    foodModal.attr(foodResults[j].summary);
                     // foodDiv.append(u);
                     // u.attr("href");
-                    $(".modal-body").html(foodResults[j].summary);
+                    
 
                     foodDiv.click(function() {
                         console.log($(this));
                         $("#modalWindow").modal("show");
-                        
+                        $(".modal-body").html(foodModal);
                      });
 
                     if (j >= 0 && j < 3) {
