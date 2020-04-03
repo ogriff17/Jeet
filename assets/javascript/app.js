@@ -11,6 +11,8 @@ $(document).ready(function () {
             var showButton = $("<button>");
 
             showButton.addClass("btnClass");
+            //added button animation (see eatin.css)
+            showButton.addClass("animation-target")
 
             showButton.attr("data-food", foodtopics[i]);
 
@@ -30,7 +32,7 @@ $(document).ready(function () {
     function displayRecipes() {
         var food = $(this).attr("data-food");
 
-        var queryURL = "https://api.spoonacular.com/recipes/complexSearch?apiKey=af0218eedd114716bee05b4c6cc69e87&addRecipeInformation=true&query=" + food;
+        var queryURL = "https://api.spoonacular.com/recipes/complexSearch?apiKey=af0218eedd114716bee05b4c6cc69e87&limitLicense=true&instructionsRequired=true&addRecipeInformation=true&query=" + food;
 
         console.log(queryURL);
 
@@ -72,13 +74,19 @@ $(document).ready(function () {
                     foodDiv.append(q);
                     // foodDiv.append(u);
                     // u.attr("href");
-                    var modalLink = foodResults[j].summary;
-
-                    foodDiv.click(function() {
+                    // var modalLink = foodResults[j].summary;
+                    foodDiv.attr("data-summary", foodResults[j].summary);
+                    //used bounce.js for animation of card
+                    foodDiv.addClass("animation-target");
+                
+                    foodDiv.click(function () {
                         console.log($(this));
                         $("#modalWindow").modal("show");
-                        $(".modal-body").html(modalLink);
-                     });
+                        // CHASE - Fetch the summary
+                        var summary = $(this).attr('data-summary')
+                        // CHASE - Put summary in body
+                        $(".modal-body").html(summary);
+                      });
 
                     if (j >= 0 && j < 3) {
                         $("#recipe-col-1").append(foodDiv);
