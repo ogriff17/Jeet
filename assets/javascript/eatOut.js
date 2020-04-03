@@ -1,20 +1,8 @@
-$(document).ready(function(){
-    var geoLocation = document.getElementById("demo");
-        function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-        }
-
-        function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
-        }
-
-
-    getLocation();
-
-})
-
+var uiCoords = document.getElementById("button-here");
+if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+        uiCoords.innerHTML = "Location: " + position.coords.latitude + "," + position.coords.longitude;
+    });
+} else {
+    console.log("Geolocation is not supported by this browser.");
+};
