@@ -1,16 +1,20 @@
+var foodType = $("#food-search").val().trim();
+
 $("#search-btn-restaurant").on("click", function(event) {
     event.preventDefault();
     restaurantSearch($("#restaurant-location").val().trim());
-    var foodType = restaurantSearch($("#food-search").val().trim());
+    restaurantSearch($("#food-search").val().trim());
 })
 
 function restaurantSearch(searchVal) {
     $("#restaurant-cards").empty();
     $("#restaurant-results").empty();
 
-    var queryURL = "https://developers.zomato.com/api/v2.1/cities?q=" + searchVal;
+    var queryURL = "https://developers.zomato.com/api/v2.1/locations?query=" + searchVal;
+    console.log(queryURL)
+    console.log(searchVal)
 
-    var col = $("<div>").attr("class", "col mx-auto text-center");
+    var col = $("<div>").attr("class", "col mx-auto text-center")
 
 
     $("#restaurant-cards").append(col);
@@ -25,10 +29,11 @@ function restaurantSearch(searchVal) {
     }).then(function(data) {
         console.log(data)
         //get coordinates of first suggested city
-        var cityId = data.location_suggestions[0].id;
+        var searchLatitude = data.location_suggestions[0].latitude;
+        var searchLongitude = data.location_suggestions[0].longitude;
 
         //second query url
-        var queryTwoURL = "https://developers.zomato.com/api/v2.1/search?q=" + foodType;
+        var queryTwoURL = "https://developers.zomato.com/api/v2.1/search?q=" + foodType + "&" + searchLatitude + "&" + searchLongitude;
 
         $.ajax({
             url: queryTwoURL,
@@ -40,6 +45,7 @@ function restaurantSearch(searchVal) {
 
             $("#loading-col").detach();
 
+            //Get re-defined based on new API paramaters
             //get best rated restaurants list
             var resultsArr = response.best_rated_restaurant;
             
