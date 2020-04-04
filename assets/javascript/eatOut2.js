@@ -9,7 +9,7 @@ function restaurantSearch(searchVal) {
 
     var queryURL = "https://developers.zomato.com/api/v2.1/cities?q=" + searchVal;
 
-    var col = $("<div>").attr("class", "col mx-auto text-center")
+    var col = $("<div>").attr("class")
 
 
     $("#restaurant-cards").append(col);
@@ -54,7 +54,7 @@ function restaurantSearch(searchVal) {
             for (var i = 0; i < resultsArr.length; i++) {
                 //new col for each card
                 //console.log(resultsArr[i])
-                var col = $("<div>").attr("class", "col-5 mx-auto text-align-center");
+                var col = $("<div>").attr("class", "col-5 ");
                 //new card for each restaurant
                 var card = $("<div>").attr("class", "card mx-auto my-4 p-3");
 
