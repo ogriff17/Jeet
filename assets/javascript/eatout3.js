@@ -1,4 +1,4 @@
-var foodType = $("#food-search").val().trim();
+
 
 $("#search-btn-restaurant").on("click", function(event) {
     event.preventDefault();
@@ -14,11 +14,11 @@ function restaurantSearch(searchVal) {
     console.log(queryURL)
     console.log(searchVal)
 
-    var col = $("<div>").attr("class", "col mx-auto text-center")
+    var col = $("<div>").attr("class")
 
 
     $("#restaurant-cards").append(col);
-
+    var foodType = $("#food-search").val().trim();
     $.ajax({
         url: queryURL,
         method: "GET",
@@ -28,6 +28,7 @@ function restaurantSearch(searchVal) {
     
     }).then(function(data) {
         console.log(data)
+        
         //get coordinates of first suggested city
         var searchLatitude = data.location_suggestions[0].latitude;
         var searchLongitude = data.location_suggestions[0].longitude;
@@ -42,12 +43,13 @@ function restaurantSearch(searchVal) {
                 "user-key": "15c1ff3941761296695d21c6ac2374ee"
             }
         }).then(function(response) {
-
+            console.log(response);
             $("#loading-col").detach();
 
             //Get re-defined based on new API paramaters
             //get best rated restaurants list
-            var resultsArr = response.best_rated_restaurant;
+            var resultsArr = response.restaurants;
+            console.log(resultsArr);
             
             //displaying results
                 var firstCol = $("<div>").attr("class", "col text-center");
@@ -60,13 +62,13 @@ function restaurantSearch(searchVal) {
             //for loop to work with top 10 restaurants
             for (var i = 0; i < resultsArr.length; i++) {
                 //new col for each card
-                //console.log(resultsArr[i])
+                console.log(resultsArr[i])
                 var col = $("<div>").attr("class", "col-5 mx-auto text-align-center");
                 //new card for each restaurant
                 var card = $("<div>").attr("class", "card mx-auto my-4 p-3");
 
                 //restaurant img
-                var restaurantImage = $("<img>").attr("src", resultsArr[i].restaurant.photos[0].photo.url);	
+                var restaurantImage = $("<img>").attr("src", resultsArr[i].restaurant.photos_url);	
                 restaurantImage.attr("height", "225");	
                 restaurantImage.attr("width", "300");	
                 restaurantImage.attr("class", "mx-auto my-2");
