@@ -48,4 +48,13 @@ h1 {
 
 .lead{
     color:black;
+    font-size:30px;
+}
+
+.card-title{
+    color:navy;
+}
+
+.card-text{
+    color:navy;
 }
