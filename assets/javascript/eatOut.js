@@ -1,3 +1,4 @@
+
 var uiCoords = document.getElementById("button-here");
 if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
