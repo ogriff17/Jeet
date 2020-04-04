@@ -100,9 +100,3 @@ function displayRecipes() {
                 }
             })
 
-    }
-    displayButtons();
-
-    $(document).on("click", ".btnClass", displayRecipes);      
-        
-    })

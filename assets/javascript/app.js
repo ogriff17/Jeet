@@ -1,13 +1,14 @@
 $(document).ready(function () {
 
     ///array of food (i'm testing out the buttons for javascript, we totally don't have to do it) 
-    var foodtopics = ["Pizza", "Chinese Dishes", "Mexican Dishes", "Italian", "Indian Dishes"];
+    var foodtopics = ["Pizza", "Chinese", "Mexican", "Italian", "Indian"];
 
     //takes array and creates buttons
     function displayButtons() {
         $(".buttons-view").empty();
 
-        for (var i = 0; i < foodtopics.length; i++) {
+        for (var i = 0; i < foodtopics.length; i++) { /*Do we want to put in a clear input field?
+            anytime they look for a new food-that way they dont have to re-type this*/
             var showButton = $("<button>");
 
             showButton.addClass("btnClass");
