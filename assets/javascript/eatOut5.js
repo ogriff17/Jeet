@@ -44,3 +44,32 @@ function restaurantSearch(cityName) {
                 header: {
                     "user-key": "15c1ff3941761296695d21c6ac2374ee"
                 }
+            }).then(function(foodResponse) {
+            console.log(foodResponse);
+        })
+
+    
+})
+
+
+
+
+
+
+}
+// CHASE
+// // get type of food value from search bar
+// var foodType
+// var cityName
+// $.ajax(
+//   // code to fetch lat/lon for this city
+// ).then(function(cityResults) {
+//   $.ajax(
+//     method: "GET",
+//     url: "zomato.api/search?q=" + foodType + "&lat=" + cityResults.lat + "&lon=" + cityResults.lon
+//   ).then(function(results) {
+//     for loop over results {
+//       create a new div with image and url
+//     }
+//   })
+})
