@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    //for user when typing in city location 
     $("#search-btn-restaurant").on("click", function (event) {
     
         event.preventDefault();
@@ -12,10 +13,11 @@ $(document).ready(function() {
         
         $("#restaurant-cards").empty();
         $("#restaurant-results").empty();
-    
+        //this query is to take user's city input and retrieve city id, city latitude and longitude
         var queryURL = "https://developers.zomato.com/api/v2.1/locations?query=" + cityName;
-    
+        // test
         console.log(queryURL);
+        //for user when typing in food requested
         foodType = $("#food-search").val().trim();
      
         $.ajax({
@@ -27,15 +29,16 @@ $(document).ready(function() {
     
         }).then(function(response) {
         console.log(response);
+        //take query's responses and put into appropriate variable
         var entityID= response.location_suggestions[0].entity_id;
         var citylat= response.location_suggestions[0].latitude;  
         var citylong= response.location_suggestions[0].longitude;
-        
+        // test
         console.log(entityID);
         console.log(citylat);
         console.log(citylong);
         
-    
+        //this query is to combine food input, cityid and city latitude and longitude
         var queryURL2 = "https://developers.zomato.com/api/v2.1/search?q=" + foodType + "&entity_id=" + entityID + "&lat="+ citylat + "&lon=" + citylong + "&apikey=15c1ff3941761296695d21c6ac2374ee"
     
                 $.ajax({
@@ -86,6 +89,7 @@ $(document).ready(function() {
     
                  card.append(restaurantImage, link, cuisines, avgCost, address);
                  col.append(card);
+                 $("#restaurant-cards").addClass("animation-target");
                  $("#restaurant-cards").append(col);
              }
             })
