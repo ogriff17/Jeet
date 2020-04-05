@@ -50,6 +50,7 @@ function restaurantSearch(searchVal) {
             //get best rated restaurants list
             var resultsArr = response.restaurants;
             console.log(resultsArr);
+            console.log(response.restaurants)
             
             //displaying results
                 var firstCol = $("<div>").attr("class", "col text-center");
@@ -68,7 +69,7 @@ function restaurantSearch(searchVal) {
                 var card = $("<div>").attr("class", "card mx-auto my-4 p-3");
 
                 //restaurant img
-                var restaurantImage = $("<img>").attr("src", resultsArr[i].restaurant.photos_url);	
+                var restaurantImage = $("<img>").attr("src", resultsArr[i].restaurant.featured_image);
                 restaurantImage.attr("height", "225");	
                 restaurantImage.attr("width", "300");	
                 restaurantImage.attr("class", "mx-auto my-2");
