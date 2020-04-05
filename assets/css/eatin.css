@@ -93,6 +93,42 @@ button:hover {
     color: yellow;
 }
 
+.nav-link {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: -142.1px;
+    margin-left: -70px;
+    border-color: yellow;
+    border-style: solid;
+    border-width: 4px;
+}
+
+#navbarDropdown {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Cookie', cursive;
+    color: black;
+    background-color: forestgreen;
+
+}
+
+.navBarBackground {
+    padding-bottom: 0px;
+    margin: 50px;
+    margin-right: 1089px;
+}
+
+.dropdown-menu {
+    background-color: yellow;
+
+}
+
+.dropdown-item {
+    color: black;
+    font-family: 'Cookie', cursive;
+    font-size: 25px;
+
+}
 
 
 
