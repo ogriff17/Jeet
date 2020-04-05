@@ -40,6 +40,7 @@ h1 {
     border-style: solid;
     border-width: 5px;
     text-align: center;
+    text-decoration: none;
 }
 
 #mood {
@@ -52,9 +53,11 @@ h1 {
 }
 
 .card-title{
-    color:navy;
+    color: black;
+    text-decoration: none;
 }
 
 .card-text{
-    color:navy;
+    color: black;
+    text-decoration: none;
 }
