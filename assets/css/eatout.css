@@ -111,3 +111,27 @@ border-color: yellow;
 .font-weight-bold{
     color: yellow;
 }
+
+img {
+    border-style: ridge;
+    border-color: forestgreen;
+}
+img:hover {
+    border-style: solid;
+    border-color: yellow;
+}
+.card:link {
+text-decoration: none;
+}
+.card:hover {
+    border-style: solid;
+    border-color: yellow;
+    text-shadow: -1px -1px 0 yellow, 1px -1px 0 yellow, -1px 1px 0 yellow, 1px 1px 0 yellow;
+}
+p {
+    color: green;
+}
+h4 {
+    color: green;
+    text-decoration: none;
+}
