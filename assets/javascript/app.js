@@ -1,14 +1,15 @@
 $(document).ready(function () {
 
     ///array of food (i'm testing out the buttons for javascript, we totally don't have to do it) 
-    var foodtopics = ["Pizza", "Chinese", "Mexican", "Italian", "Indian"];
+    var foodtopics = ["American", "Chinese", "Mexican", "Japanese", "Italian", "Indian", "Barbecue", "Vegan"];
 
     //takes array and creates buttons
     function displayButtons() {
         $(".buttons-view").empty();
 
-        for (var i = 0; i < foodtopics.length; i++) { /*Do we want to put in a clear input field?
-            anytime they look for a new food-that way they dont have to re-type this*/
+        for (var i = 0; i < foodtopics.length; i++) {
+            /*Do we want to put in a clear input field?
+                       anytime they look for a new food-that way they dont have to re-type this*/
             var showButton = $("<button>");
 
             showButton.addClass("btnClass");
@@ -58,9 +59,9 @@ $(document).ready(function () {
                         displayButtons();
                     }
                 }
-                 
+
                 for (var j = 0; j < foodResults.length; j++) {
-                   
+
                     var foodDiv = $("<div>");
                     var q = $("<h5>").text(foodResults[j].title);
                     // var u = $("<href>").text(results[j].recipe.url);
@@ -79,7 +80,7 @@ $(document).ready(function () {
                     foodDiv.attr("data-summary", foodResults[j].summary);
                     //used bounce.js for animation of card
                     foodDiv.addClass("animation-target");
-                
+
                     foodDiv.click(function () {
                         console.log($(this));
                         $("#modalWindow").modal("show");
@@ -87,7 +88,7 @@ $(document).ready(function () {
                         var summary = $(this).attr('data-summary')
                         // CHASE - Put summary in body
                         $(".modal-body").html(summary);
-                      });
+                    });
 
                     if (j >= 0 && j < 3) {
                         $("#recipe-col-1").append(foodDiv);
