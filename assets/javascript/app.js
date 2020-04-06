@@ -34,7 +34,7 @@ $(document).ready(function () {
     function displayRecipes() {
         var food = $(this).attr("data-food");
 
-        var queryURL = "https://api.spoonacular.com/recipes/complexSearch?apiKey=af0218eedd114716bee05b4c6cc69e87&limitLicense=true&instructionsRequired=true&addRecipeInformation=true&query=" + food;
+        var queryURL = "https://api.spoonacular.com/recipes/complexSearch?apiKey=af0218eedd114716bee05b4c6cc69e87&limitLicense=true&instructionsRequired=true&addRecipeInformation=true&number=25&query=" + food;
 
         console.log(queryURL);
 
@@ -90,9 +90,9 @@ $(document).ready(function () {
                         $(".modal-body").html(summary);
                     });
 
-                    if (j >= 0 && j < 3) {
+                    if (j >= 0 && j < 8) {
                         $("#recipe-col-1").append(foodDiv);
-                    } else if (j >= 3 && j < 7) {
+                    } else if (j >= 8 && j < 17) {
                         $("#recipe-col-2").append(foodDiv);
                     } else {
                         $("#recipe-col-3").append(foodDiv);
